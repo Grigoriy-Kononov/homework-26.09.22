@@ -18,8 +18,12 @@ int Exponentiation(int first, int second)
               return result;
 }
 
-
-Console.WriteLine(Exponentiation(2, 4));
+Console.WriteLine("Задача 25: возводит число A в натуральную степень B");
+Console.Write("Введите число A: ");
+  int first = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите число B: ");
+  int second = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"{first} в степени {second} = {Exponentiation(first, second)}");
 
 
 /*
@@ -30,6 +34,9 @@ Console.WriteLine(Exponentiation(2, 4));
 82 -> 10
 9012 -> 12
 */
+
+
+
 
  int SumOfDigits(int only)
  {
@@ -47,7 +54,10 @@ Console.WriteLine(Exponentiation(2, 4));
               return result;
   }
 
-SumOfDigits(452);
+Console.WriteLine("Задача 27: выдаёт сумму цифр в числе");
+Console.Write("Введите число A: ");
+  int only = Convert.ToInt32(Console.ReadLine());
+SumOfDigits(only);
 
 
 
@@ -64,7 +74,7 @@ int RandomArray(int arraylength, int lowerlimit, int upperlimit)
               int[] array = new int[arraylength];
               for (int i = 0; i < array.Length; i++)
               {
-              array[i] = new Random().Next(lowerlimit, upperlimit);
+              array[i] = new Random().Next(lowerlimit, upperlimit+1);
               }
               Console.Write(String.Join(",",array));
               Console.Write(" -> [");
@@ -74,7 +84,15 @@ int RandomArray(int arraylength, int lowerlimit, int upperlimit)
               
 }
 
-RandomArray(10, -10, 11);
+Console.WriteLine("Задача 29: задаёт массив из N элементов и выводит их на экран");
+Console.Write("Введите длинну массива: ");
+  int arraylength = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите нижний предел массива: ");
+  int lowerlimit = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите верхний предел массива: ");
+  int upperlimit = Convert.ToInt32(Console.ReadLine());
+
+RandomArray(arraylength, lowerlimit, upperlimit);
 
 
 /*
@@ -83,13 +101,13 @@ RandomArray(10, -10, 11);
 в диапазоне от -10 до 10 и найти максимальное значение среди них
 */
 
-int MaxArray(int arraylength, int lowerlimit, int upperlimit)
+int MaxArray(int arraylength1, int lowerlimit1, int upperlimit1)
 {
               int max = 0;
-              int[] array1 = new int[arraylength];
+              int[] array1 = new int[arraylength1];
               for (int i = 0; i < array1.Length; i++)
               {
-              array1[i] = new Random().Next(lowerlimit, upperlimit);
+              array1[i] = new Random().Next(lowerlimit1, upperlimit1+1);
               if (array1[i] > max)
                             {
                             max = array1[i];
@@ -102,4 +120,11 @@ int MaxArray(int arraylength, int lowerlimit, int upperlimit)
               return max;
 }
 
-MaxArray(10, -10, 11);
+Console.WriteLine("Задача 29: задаёт массив из N элементов и выводит их на экран и находит максимальное значение среди них");
+Console.Write("Введите длинну массива: ");
+  int arraylength1 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите нижний предел массива: ");
+  int lowerlimit1 = Convert.ToInt32(Console.ReadLine());
+  Console.Write("Введите верхний предел массива: ");
+  int upperlimit1 = Convert.ToInt32(Console.ReadLine());
+MaxArray(arraylength1, lowerlimit1, upperlimit1);
